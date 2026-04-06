@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Percentage Calculator</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="percentagecalci.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>NMIMS   Student<span>Portal</span></h2>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="attendance.html"> <i class="fas fa-fingerprint"></i> <span>Attendance</span></a>
+                    </li>
+                    <li>
+                        <a href="graph.html"> <i class="fas fa-chart-line"></i> <span>Attendance Graph</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i> <span>Percentage Calci</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                 <div class="search">
+                    <!-- <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button> -->
+                </div> 
+                
+                <div class="nav-icons">
+                    <!-- User Icon with Dropdown -->
+                    <div class="icon-item user-dropdown">
+                        <i class="fas fa-user"></i>
+                        <div class="dropdown-menu">
+                            <div class="student-info">
+                                <!-- <img src="/api/placeholder/50/50" alt="Student Profile"> -->
+                                <div>
+                                    <h4>Atharv Shah</h4>
+                                    <p>ID: A090</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Fingerprint Icon -->
+                    <div class="icon-item">
+                       <a href="attendance.html"> <i class="fas fa-fingerprint"></i></a>
+                    </div>
+                    
+                    <!-- Graph Icon -->
+                    <div class="icon-item">
+                       <a href="graph.html"><i class="fas fa-chart-line"></i></a> 
+                    </div>
+                    <!-- calcULATOR ICON -->
+                    <div class="icon-item">
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i></a> 
+                     </div>
+                </div>
+            </div>
+
+            <!-- Percentage Calculator Content -->
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <h1>Attendance Percentage Calculator</h1>
+                    <p id="current-date">Wednesday, March 16, 2025</p>
+                </div>
+
+                <div class="subjects-container">
+                    <!-- Subject 1: OOBJ -->
+                    <div class="subject-card" data-subject="OOBJLAB">
+                        <div class="subject-header">
+                            <h3>OOBJ</h3>
+                            <span class="attendance-badge">85%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="oobjlab-total">20</span></p>
+                            <p>Lectures Attended: <span id="oobjlab-attended">17</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="oobjlab-next">Next Lectures:</label>
+                                <input type="number" id="oobjlab-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="oobjlab-attend-result">87.5%</span></p>
+                                <p>If Not Attended: <span id="oobjlab-not-attend-result">83.3%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat similar structure for other 7 subjects -->
+                    <!-- Subject 2: TCS -->
+                    <div class="subject-card" data-subject="TCS">
+                        <div class="subject-header">
+                            <h3>TCS</h3>
+                            <span class="attendance-badge">92%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="tcs-total">25</span></p>
+                            <p>Lectures Attended: <span id="tcs-attended">23</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="tcs-next">Next Lectures:</label>
+                                <input type="number" id="tcs-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="tcs-attend-result">92.6%</span></p>
+                                <p>If Not Attended: <span id="tcs-not-attend-result">91.3%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue with remaining 6 subjects in similar format -->
+                    <!-- MM -->
+                    <div class="subject-card" data-subject="MM">
+                        <div class="subject-header">
+                            <h3>MM</h3>
+                            <span class="attendance-badge">78%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="mm-total">18</span></p>
+                            <p>Lectures Attended: <span id="mm-attended">14</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="mm-next">Next Lectures:</label>
+                                <input type="number" id="mm-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="mm-attend-result">79.2%</span></p>
+                                <p>If Not Attended: <span id="mm-not-attend-result">76.5%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WP -->
+                    <div class="subject-card" data-subject="WP">
+                        <div class="subject-header">
+                            <h3>WP</h3>
+                            <span class="attendance-badge">95%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="wp-total">22</span></p>
+                            <p>Lectures Attended: <span id="wp-attended">21</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="wp-next">Next Lectures:</label>
+                                <input type="number" id="wp-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="wp-attend-result">95.5%</span></p>
+                                <p>If Not Attended: <span id="wp-not-attend-result">94.4%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CVT -->
+                    <div class="subject-card" data-subject="CVT">
+                        <div class="subject-header">
+                            <h3>CVT</h3>
+                            <span class="attendance-badge">83%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="cvt-total">24</span></p>
+                            <p>Lectures Attended: <span id="cvt-attended">20</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="cvt-next">Next Lectures:</label>
+                                <input type="number" id="cvt-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="cvt-attend-result">83.7%</span></p>
+                                <p>If Not Attended: <span id="cvt-not-attend-result">81.3%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DBMS -->
+                    <div class="subject-card" data-subject="DBMSLAB">
+                        <div class="subject-header">
+                            <h3>DBMS</h3>
+                            <span class="attendance-badge">87%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="dbmslab-total">23</span></p>
+                            <p>Lectures Attended: <span id="dbmslab-attended">20</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="dbmslab-next">Next Lectures:</label>
+                                <input type="number" id="dbmslab-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="dbmslab-attend-result">87.5%</span></p>
+                                <p>If Not Attended: <span id="dbmslab-not-attend-result">85.7%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COA -->
+                    <div class="subject-card" data-subject="COA">
+                        <div class="subject-header">
+                            <h3>COA</h3>
+                            <span class="attendance-badge">90%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="coa-total">20</span></p>
+                            <p>Lectures Attended: <span id="coa-attended">18</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="coa-next">Next Lectures:</label>
+                                <input type="number" id="coa-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="coa-attend-result">90.5%</span></p>
+                                <p>If Not Attended: <span id="coa-not-attend-result">88.9%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAA -->
+                    <div class="subject-card" data-subject="DAA">
+                        <div class="subject-header">
+                            <h3>DAA</h3>
+                            <span class="attendance-badge">75%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="daa-total">16</span></p>
+                            <p>Lectures Attended: <span id="daa-attended">12</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="daa-next">Next Lectures:</label>
+                                <input type="number" id="daa-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="daa-attend-result">76.2%</span></p>
+                                <p>If Not Attended: <span id="daa-not-attend-result">73.3%</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maths -->
+                    <div class="subject-card" data-subject="MATHEMATICS">
+                        <div class="subject-header">
+                            <h3>Mathematics</h3>
+                            <span class="attendance-badge">75%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="mathematics-total">16</span></p>
+                            <p>Lectures Attended: <span id="mathematics-attended">12</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="mathematics-next">Next Lectures:</label>
+                                <input type="number" id="mathematics-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="mathematics-attend-result">76.2%</span></p>
+                                <p>If Not Attended: <span id="mathematics-not-attend-result">73.3%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DAA -->
+                    <div class="subject-card" data-subject="PHYSICS">
+                        <div class="subject-header">
+                            <h3>Physics</h3>
+                            <span class="attendance-badge">75%</span>
+                        </div>
+                        <div class="subject-details">
+                            <p>Lectures Held: <span id="physics-total">16</span></p>
+                            <p>Lectures Attended: <span id="physics-attended">12</span></p>
+                        </div>
+                        <div class="percentage-calculator">
+                            <div class="calc-input">
+                                <label for="physics-next">Next Lectures:</label>
+                                <input type="number" id="physics-next" min="0" value="1">
+                            </div>
+                            <div class="calc-result">
+                                <p>If Attended: <span id="physics-attend-result">76.2%</span></p>
+                                <p>If Not Attended: <span id="physics-not-attend-result">73.3%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="percentagecalci.js"></script>
+</body>
+</html>

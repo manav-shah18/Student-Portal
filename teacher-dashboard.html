@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="teacher-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>NMIMS <span>Teacher Portal</span></h2>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <!-- <li>
+                        <a href="#timetable-section"><i class="fas fa-calendar-alt"></i> <span>Manage Timetable</span></a>
+                    </li>
+                    <li>
+                        <a href="#attendance-section"><i class="fas fa-clipboard-check"></i> <span>Take Attendance</span></a>
+                    </li>
+                    <li>
+                        <a href="#students-section"><i class="fas fa-users"></i> <span>Student List</span></a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="search">
+                    <!-- <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button> -->
+                </div> 
+                <div class="nav-icons">
+                    <div class="icon-item user-dropdown">
+                        <i class="fas fa-user"></i>
+                        <div class="dropdown-menu">
+                            <div class="student-info">
+                                <div>
+                                    <h4 id="teacher-name">Teacher Name</h4>
+                                    <p id="teacher-id">T001</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <h1>Welcome, <span id="welcome-name">Teacher</span>!</h1>
+                    <p id="current-date">Wednesday, March 12, 2025</p>
+                </div>
+
+                <!-- Timetable Management Section -->
+                <div id="timetable-section" class="section">
+                    <div class="section-header">
+                        <h2>Manage Timetable</h2>
+                    </div>
+                    <div class="timetable-management">
+                        <form id="timetable-form">
+                            <div class="form-row">
+                                <select id="course-select" required>
+                                    <option value="">Select Course</option>
+                                </select>
+                                <select id="day-select" required>
+                                    <option value="">Select Day</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" id="time-slot" placeholder="Time Slot (e.g. 09:00 - 10:00)" required>
+                                <input type="text" id="room" placeholder="Room Number" required>
+                            </div>
+                            <button type="submit" class="btn">Add Timetable Entry</button>
+                        </form>
+
+                        <div class="timetable-list">
+                            <h3>Current Timetable</h3>
+                            <table id="timetable-display">
+                                <thead>
+                                    <tr>
+                                        <th>Course</th>
+                                        <th>Day</th>
+                                        <th>Time Slot</th>
+                                        <th>Room</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="timetable-body">
+                                    <!-- Timetable entries will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Management Section -->
+                <div id="attendance-section" class="section">
+                    <div class="section-header">
+                        <h2>Take Attendance</h2>
+                    </div>
+                    <div class="attendance-management">
+                        <form id="attendance-form">
+                            <div class="form-row">
+                                <select id="attendance-course" required>
+                                    <option value="">Select Course</option>
+                                </select>
+                                <input type="date" id="attendance-date" required>
+                            </div>
+                            <div id="student-attendance-list">
+                                <!-- Student list will be dynamically populated here -->
+                            </div>
+                            <button type="submit" class="btn">Submit Attendance</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="teacher-dasboard.js"></script>
+</body>
+</html>

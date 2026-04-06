@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="graph.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <!-- <img src="/api/placeholder/100/100" alt="School Logo"> -->
+                <h2>NMIMS Student<span>Portal</span></h2>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="attendance.html"> <i class="fas fa-fingerprint"></i> <span>Attendance</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="graph.html"> <i class="fas fa-chart-line"></i> <span>Attendance Graph</span></a>
+                    </li>
+                    <li>
+                        <a href="percentagecalci.html"> <i class="fa-solid fa-calculator"></i> <span>Percentage Calci</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+                 <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div> 
+                 
+                <div class="search">
+                </div> 
+                
+                <div class="nav-icons">
+                    <!-- User Icon with Dropdown -->
+                    <div class="icon-item user-dropdown">
+                        <i class="fas fa-user"></i>
+                        <div class="dropdown-menu">
+                            <div class="student-info">
+                                <!-- <img src="/api/placeholder/50/50" alt="Student Profile"> -->
+                                <div>
+                                    <h4>Atharv Shah</h4>
+                                    <p>ID: A090</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Fingerprint Icon -->
+                    <div class="icon-item">
+                       <a href="attendance.html"> <i class="fas fa-fingerprint"></i></a>
+                    </div>
+                    
+                    <!-- Graph Icon -->
+                    <div class="icon-item">
+                       <a href="graph.html"><i class="fas fa-chart-line"></i></a> 
+                    </div>
+                        <!-- CALCULATOR ICON -->
+                    <div class="icon-item">
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i></i></a> 
+                     </div>
+                    
+                </div>
+            </div>
+
+            <!-- Attendance Graph Content -->
+            <div class="attendance-graph-content">
+                <div class="welcome-section">
+                    <h1>Attendance Graphs</h1>
+                    <p id="current-date">Sunday, March 16, 2025</p>
+                </div>
+                
+                <div class="subjects-grid">
+                    <!-- Subject 1 -->
+                    <div class="subject-card" id="subject1">
+                        <div class="subject-info">
+                            <h3>COA (Computer Organization and Architecture)</h3>
+                            <button class="view-graph-btn" data-subject="COA">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-COA">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 2 -->
+                    <div class="subject-card" id="subject2">
+                        <div class="subject-info">
+                            <h3>OOPJ(0bject Oreinted Programming Through JAVA) Lab</h3>
+                            <button class="view-graph-btn" data-subject="DSA">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-DSA">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 3 -->
+                    <div class="subject-card" id="subject3">
+                        <div class="subject-info">
+                            <h3>DBMS (Database Management Systems) Lab</h3>
+                            <button class="view-graph-btn" data-subject="DBMS">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-DBMS">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 4 -->
+                    <div class="subject-card" id="subject4">
+                        <div class="subject-info">
+                            <h3>TCS(Theoretical Computer Science)</h3>
+                            <button class="view-graph-btn" data-subject="OS">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-OS">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 5 -->
+                    <div class="subject-card" id="subject5">
+                        <div class="subject-info">
+                            <h3>MM (Microprocessor and Microcontroller)</h3>
+                            <button class="view-graph-btn" data-subject="CN">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-CN">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 6 -->
+                    <div class="subject-card" id="subject6">
+                        <div class="subject-info">
+                            <h3>CVT (Complex Variable & Transform)</h3>
+                            <button class="view-graph-btn" data-subject="ML">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-ML">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 7 -->
+                    <div class="subject-card" id="subject7">
+                        <div class="subject-info">
+                            <h3>DAA (Design And Analysis Of Algorithm)</h3>
+                            <button class="view-graph-btn" data-subject="SE">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-SE">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject 8 -->
+                    <div class="subject-card" id="subject8">
+                        <div class="subject-info">
+                            <h3>WP (Web Programming)</h3>
+                            <button class="view-graph-btn" data-subject="WD">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-WD">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject 9 -->
+                    <div class="subject-card" id="subject9">
+                        <div class="subject-info">
+                            <h3>Mathematics</h3>
+                            <button class="view-graph-btn" data-subject="MA">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-MA">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject 10 -->
+                    <div class="subject-card" id="subject10">
+                        <div class="subject-info">
+                            <h3>Physics</h3>
+                            <button class="view-graph-btn" data-subject="PY">View Graph</button>
+                        </div>
+                        <div class="graph-container" id="graph-PY">
+                            <div class="graph-area">
+                                <div class="graph-x-label">Months</div>
+                                <div class="graph-y-label">Attendance Percentage</div>
+                                <div class="graph-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="graph.js"></script>
+</body>
+</html>

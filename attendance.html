@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="attendance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <!-- <img src="/api/placeholder/100/100" alt="School Logo"> -->
+                <h2>NMIMS   Student<span>Portal</span></h2>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="attendance.html"> <i class="fas fa-fingerprint"></i> <span>Attendance</span></a>
+                    </li>
+                    <li>
+                        <a href="graph.html"> <i class="fas fa-chart-line"></i> <span>Attendance Graph</span></a>
+                    </li>
+                    <li>
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i> <span>Percentage Calci</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+               
+                
+                <div class="search">
+                </div> 
+                
+                <div class="nav-icons">
+                    <!-- User Icon with Dropdown -->
+                    <div class="icon-item user-dropdown">
+                        <i class="fas fa-user"></i>
+                        <div class="dropdown-menu">
+                            <div class="student-info">
+                                <!-- <img src="/api/placeholder/50/50" alt="Student Profile"> -->
+                                <div>
+                                    <h4>Atharv Shah</h4>
+                                    <p>ID: A090</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Fingerprint Icon -->
+                    <div class="icon-item">
+                       <a href="attendance.html"> <i class="fas fa-fingerprint"></i></a>
+                    </div>
+                    
+                    <!-- Graph Icon -->
+                    <div class="icon-item">
+                       <a href="graph.html"><i class="fas fa-chart-line"></i></a> 
+                    </div>
+                    <!-- CALCULATOR ICON  -->
+                    <div class="icon-item">
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i></a> 
+                     </div>
+                </div>
+            </div>
+
+            <!-- Attendance Content -->
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <h1>Attendance Overview</h1>
+                    <p id="current-date">Wednesday, March 16, 2025</p>
+                </div>
+                <div class="overall-attendance">
+                    <h3>Overall Attendance: <span class="attendance-green">100%</span></h3>
+                    <p>Total Lectures: 168 | Attended: 168</p>
+                </div>
+                <div class="subjects-container">
+                </div>
+
+        </div>
+    </div>
+
+    <script src="attendance.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <!-- <img src="/api/placeholder/100/100" alt="School Logo"> -->
+                <h2>NMIMS Student<span>Portal</span></h2>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="attendance.html"> <i class="fas fa-fingerprint"></i> <span>Attendance</span></a>
+                    </li>
+                    <li>
+                        <a href="graph.html"> <i class="fas fa-chart-line"></i> <span>Attendance Graph</span></a>
+                    </li>
+                    <li>
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i> <span>Percentage Calci</span></a>
+                    </li>
+                    <!-- <li>
+                        <a href="#"><i class="fas fa-chart-bar"></i> <span>Grades</span></a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                 <div class="search">
+                    <!-- <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button> -->
+                </div> 
+                
+                <div class="nav-icons">
+                    <!-- User Icon with Dropdown -->
+                    <div class="icon-item user-dropdown">
+                        <i class="fas fa-user"></i>
+                        <div class="dropdown-menu">
+                            <div class="student-info">
+                                <!-- <img src="/api/placeholder/50/50" alt="Student Profile"> -->
+                                <div>
+                                    <h4>Atharv Shah</h4>
+                                    <p>ID: A090</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Fingerprint Icon -->
+                    <div class="icon-item">
+                       <a href="attendance.html"> <i class="fas fa-fingerprint"></i></a>
+                    </div>
+                    
+                    <!-- Graph Icon -->
+                    <div class="icon-item">
+                       <a href="graph.html"><i class="fas fa-chart-line"></i></a> 
+                    </div>
+                    <!-- calcULATOR ICON -->
+                    <div class="icon-item">
+                        <a href="percentagecalci.html"><i class="fa-solid fa-calculator"></i></a> 
+                     </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="welcome-section">
+                    <h1>Welcome back, <span id="student-name">John</span>!</h1>
+                    <p id="current-date">Wednesday, March 12, 2025</p>
+                </div>
+                
+                <div class="timetable-section">
+                    <div class="section-header">
+                        <h2>Today's Timetable</h2>
+                        <span id="day-display">Wednesday</span>
+                    </div>
+                    
+                    <div class="timetable-container">
+                        <table id="timetable">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Subject</th>
+                                    <th>Room</th>
+                                    <th>Teacher</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Timetable content will be dynamically loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="quick-stats">
+                    <!-- <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Courses</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>Pending Assignments</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>87%</h3>
+                            <p>Average Grade</p>
+                        </div>
+                    </div> -->
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0%</h3>
+                            <p>Attendance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* Reuse most of the styles from the student dashboard CSS */
+/* Add these additional styles */
+
+.timetable-management, 
+.attendance-management {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.timetable-list,
+.student-attendance-list {
+    margin-top: 20px;
+}
+
+#timetable-display,
+#student-attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#timetable-display th,
+#timetable-display td,
+#student-attendance-table th,
+#student-attendance-table td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btns button {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.attendance-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
